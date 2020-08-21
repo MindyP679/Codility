@@ -1,2 +1,3 @@
 # Codility
-Practice Test Solutions from Codility
+
+My code for the practice tests on Codility.com. 
