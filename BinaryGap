@@ -1,0 +1,18 @@
+def solution(N):
+    binary = bin(N)
+    if "1" not in binary:
+        return 0
+    # Create list of all indices of "1" in binary
+    indices = [count for count, num in enumerate(binary) if num == "1"]
+    # Return proper response less than 2 "1" in binary num.
+    if len(indices) < 2:
+        return 0
+    # Equation to find binary gaps.
+    result = [int(indices[i + 1]) - (int(indices[i]) + 1)
+              for i in range(0, len(indices) - 1)]
+    # Remove all "0" from list.
+    result = [i for i in result if i != 0]
+    # Return proper response for empty list.
+    if result == []:
+        return 0
+    return max(result)
